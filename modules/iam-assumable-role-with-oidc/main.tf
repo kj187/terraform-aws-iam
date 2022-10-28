@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "assume_role_with_oidc" {
       condition {
         test     = "ArnLike"
         variable = "aws:PrincipalArn"
-        values   = ["arn:${data.aws_partition.current.partition}:iam::${local.account_id}:role${var.role_path}${local.role_name_condition}"]
+        values   = ["arn:${data.aws_partition.current.partition}:iam::${local.aws_account_id}:role${var.role_path}${local.role_name_condition}"]
       }
     }
   }
